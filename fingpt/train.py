@@ -350,6 +350,9 @@ def main():
     args = parser.parse_args()
     set_seed(args.seed)
 
+
+    if args.init_adapter is None: 
+        print('[INFO] Starting from base model LLaMA-3 8B')
     os.makedirs(args.out_dir, exist_ok=True)
     if args.eval_log_path is None:
         args.eval_log_path = os.path.join(args.out_dir, "eval_metrics.jsonl")
