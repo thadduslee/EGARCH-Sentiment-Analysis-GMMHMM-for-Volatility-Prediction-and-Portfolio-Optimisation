@@ -465,7 +465,7 @@ def main():
 
     print(f"\nSaved LoRA adapter to: {args.out_dir}")
 
-    evaluate_accuracy_softmax(model, tokenizer, eval_df, batch_size=16, max_length=1024)
+    evaluate_accuracy_softmax(model, tokenizer, eval_df, batch_size=args.batch_size, max_length=1024)
     
 if __name__ == "__main__":
     main()
