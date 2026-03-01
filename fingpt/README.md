@@ -66,16 +66,8 @@ for start in tqdm(range(0, len(texts), batch_size), desc="Infer (batched)"):
     preds.extend([LABELS[i] for i in pred_idx])
     prob_rows.extend(probs_cpu.tolist())
 
-df_out = df.copy()
-df_out["pred"] = preds
-df_out["p_negative"] = [p[0] for p in prob_rows]
-df_out["p_neutral"]  = [p[1] for p in prob_rows]
-df_out["p_positive"] = [p[2] for p in prob_rows]
-df_out["correct"] = (df_out["pred"] == df_out["sentiment"]).astype(int)
-
-acc = df_out["correct"].mean() if len(df_out) else 0.0
-print(f"\nAccuracy: {acc:.4f}")
-
+# print prob. dsitributions
+print(prob_rows)
 ```
 
 
