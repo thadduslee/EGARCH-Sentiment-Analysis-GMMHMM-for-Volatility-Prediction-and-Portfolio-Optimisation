@@ -13,7 +13,7 @@ Full example code for loading model, non-batched, batched inference is in `test_
 from utils import load_fingpt, sentiment_probs, sentiment_probs_batch, LABELS
 
 # specify path to LoRa adapter
-peft_model = "./outputs/lora_int8_sentiment_llama"
+peft_model = "./outputs/lora_int8_sentiment"
 # load model using loader function
 tokenizer, model = load_fingpt(peft_model, 'cuda')
 
